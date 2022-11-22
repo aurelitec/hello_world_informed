@@ -1,4 +1,6 @@
 class InfoBit {
+  static const String infoPlaceholder = '{INFO}';
+
   final String title;
   final String text;
   final String? value;
@@ -8,4 +10,9 @@ class InfoBit {
     required this.text,
     this.value,
   });
+
+  @override
+  String toString() {
+    return '${text.replaceAll(infoPlaceholder, value ?? '')} ($title)';
+  }
 }
