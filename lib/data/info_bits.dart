@@ -6,17 +6,17 @@ import 'package:device_info_plus/device_info_plus.dart';
 
 import 'info_bit.dart';
 
-List<InfoBit> _infoBits = <InfoBit>[];
+List<InfoBit> infoBits = <InfoBit>[];
 
 final Random _random = Random();
 
 void _addInfo(String title, String text, String? value) {
-  _infoBits.add(InfoBit(title: title, text: text, value: value));
+  infoBits.add(InfoBit(title: title, text: text, value: value));
 }
 
 InfoBit getRandomInfoBit() {
-  final int index = _random.nextInt(_infoBits.length);
-  return _infoBits[index];
+  final int index = _random.nextInt(infoBits.length);
+  return infoBits[index];
 }
 
 Future<void> buildInfoBits() async {
@@ -194,45 +194,45 @@ Future<void> buildInfoBits() async {
   // Android operating system version values
 
   _addInfo(
-    'baseOS',
+    'version.baseOS',
     'The base OS build I\'m based on is {INFO}.',
     info.version.baseOS,
   );
 
   _addInfo(
-    'codename',
+    'version.codename',
     'My current development codename is {INFO}.',
     info.version.codename,
   );
 
   _addInfo(
-    'incremental',
+    'version.incremental',
     '{INFO} is the internal value used by the underlying source control to represent my build.',
     info.version.incremental,
   );
 
   if (info.version.previewSdkInt != null) {
     _addInfo(
-      'previewSdkInt',
+      'version.previewSdkInt',
       'The developer preview revision of my pre-release SDK is {INFO}.',
       info.version.previewSdkInt.toString(),
     );
   }
 
   _addInfo(
-    'release',
+    'version.release',
     'My user-visible version string is {INFO}.',
     info.version.release,
   );
 
   _addInfo(
-    'sdkInt',
+    'version.sdkInt',
     'The user-visible SDK version of my framework is {INFO}.',
     info.version.sdkInt.toString(),
   );
 
   _addInfo(
-    'securityPatch',
+    'version.securityPatch',
     'My user-visible security patch level is {INFO}.',
     info.version.securityPatch,
   );
