@@ -23,47 +23,217 @@ Future<void> buildInfoBits() async {
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
   AndroidDeviceInfo info = await deviceInfo.androidInfo;
 
-  _addInfo('board', 'My underlying board is {INFO}.', info.board);
+  _addInfo(
+    'board',
+    'My underlying board is {INFO}.',
+    info.board,
+  );
 
-  _addInfo('bootloader', 'My system bootloader version number is {INFO}.', info.bootloader);
+  _addInfo(
+    'bootloader',
+    'My system bootloader version number is {INFO}.',
+    info.bootloader,
+  );
 
-  _addInfo('brand', 'My consumer-visible brand is {INFO}.', info.brand);
+  _addInfo(
+    'brand',
+    'My consumer-visible brand is {INFO}.',
+    info.brand,
+  );
 
-  _addInfo('device', 'My industrial design is {INFO}.', info.device);
+  _addInfo(
+    'device',
+    'My industrial design is {INFO}.',
+    info.device,
+  );
 
-  _addInfo('display', '{INFO} is a build ID meant to be displayed to you.', info.display);
+  _addInfo(
+    'display',
+    '{INFO} is a build ID meant to be displayed to you.',
+    info.display,
+  );
 
-  // TODO: displayMetrics
+  // Information about the current android display.
 
-  _addInfo('fingerprint', '{INFO} uniquely identifies this build.', info.fingerprint);
+  _addInfo(
+    'displayMetrics.heightInches',
+    'My exact physical display height is {INFO} inches.',
+    info.displayMetrics.heightInches.toString(),
+  );
 
-  _addInfo('hardware', '{INFO} is the name of the hardware.', info.hardware);
+  _addInfo(
+    'displayMetrics.widthInches',
+    'My exact physical display width is {INFO} inches.',
+    info.displayMetrics.widthInches.toString(),
+  );
 
-  _addInfo('host', '{INFO}: that\'s my hostname.', info.host);
+  _addInfo(
+    'displayMetrics.heightPx',
+    'My absolute height in pixels is {INFO} pixels.',
+    info.displayMetrics.heightPx.toString(),
+  );
 
-  _addInfo('id', '{INFO}? Either a changelist number, or a label.', info.id);
+  _addInfo(
+    'displayMetrics.widthPx',
+    'My absolute width in pixels is {INFO} pixels.',
+    info.displayMetrics.widthPx.toString(),
+  );
 
-  _addInfo('isPhysicalDevice',
-      info.isPhysicalDevice ? 'I\'m a physical device.' : 'I\'m an emulator.', null);
+  _addInfo(
+    'displayMetrics.xDpi',
+    'I have exactly {INFO} physical pixels per inch in the X dimension.',
+    info.displayMetrics.xDpi.toString(),
+  );
 
-  _addInfo('manufacturer', '{INFO} is my manufacturer.', info.manufacturer);
+  _addInfo(
+    'displayMetrics.yDpi',
+    'I have exactly {INFO} physical pixels per inch in the Y dimension.',
+    info.displayMetrics.yDpi.toString(),
+  );
 
-  _addInfo('model', 'My name is {INFO}.', info.model);
+  _addInfo(
+    'displayMetrics.sizeInches',
+    'My exact physical size measured diagonally across the display is {INFO} inches.',
+    info.displayMetrics.sizeInches.toString(),
+  );
 
-  _addInfo('product', 'As an overall product, they call me {INFO}.', info.product);
+  // Back to Android device info.
 
-  // TODO: supported32BitAbis
-  print(info.supported32BitAbis);
+  _addInfo(
+    'fingerprint',
+    '{INFO} uniquely identifies this build.',
+    info.fingerprint,
+  );
 
-  // TODO: supported64BitAbis
+  _addInfo(
+    'hardware',
+    '{INFO} is the name of the hardware.',
+    info.hardware,
+  );
 
-  // TODO: supportedAbis
+  _addInfo(
+    'host',
+    '{INFO}: that\'s my hostname.',
+    info.host,
+  );
 
-  // TODO: systemFeatures
+  _addInfo(
+    'id',
+    '{INFO}? Either a changelist number, or a label.',
+    info.id,
+  );
 
-  _addInfo('tags', '{INFO} are tags that describe my build.', info.tags);
+  _addInfo(
+    'isPhysicalDevice',
+    info.isPhysicalDevice ? 'I\'m a physical device.' : 'I\'m an emulator.',
+    null,
+  );
 
-  _addInfo('type', '{INFO} is my type of build.', info.type);
+  _addInfo(
+    'manufacturer',
+    '{INFO} is my manufacturer.',
+    info.manufacturer,
+  );
 
-  // TODO: version
+  _addInfo(
+    'model',
+    'My name is {INFO}.',
+    info.model,
+  );
+
+  _addInfo(
+    'product',
+    'As an overall product, they call me {INFO}.',
+    info.product,
+  );
+
+  for (String abi in info.supported32BitAbis) {
+    _addInfo(
+      'supported32BitAbis',
+      'I support the {INFO} 32-bit ABI.',
+      abi,
+    );
+  }
+
+  for (String abi in info.supported64BitAbis) {
+    _addInfo(
+      'supported64BitAbis',
+      'I support the {INFO} 64-bit ABI.',
+      abi,
+    );
+  }
+
+  for (String abi in info.supportedAbis) {
+    _addInfo(
+      'supportedAbis',
+      'I support the {INFO} ABI.',
+      abi,
+    );
+  }
+
+  for (String feature in info.systemFeatures) {
+    _addInfo(
+      'systemFeatures',
+      'I have the {INFO} system feature.',
+      feature,
+    );
+  }
+
+  _addInfo(
+    'tags',
+    '{INFO} are tags that describe my build.',
+    info.tags,
+  );
+
+  _addInfo(
+    'type',
+    'My type of build is {INFO}.',
+    info.type,
+  );
+
+  // Android operating system version values
+
+  _addInfo(
+    'baseOS',
+    'The base OS build I\'m based on is {INFO}.',
+    info.version.baseOS,
+  );
+
+  _addInfo(
+    'codename',
+    'My current development codename is {INFO}.',
+    info.version.codename,
+  );
+
+  _addInfo(
+    'incremental',
+    '{INFO} is the internal value used by the underlying source control to represent my build.',
+    info.version.incremental,
+  );
+
+  if (info.version.previewSdkInt != null) {
+    _addInfo(
+      'previewSdkInt',
+      'The developer preview revision of my pre-release SDK is {INFO}.',
+      info.version.previewSdkInt.toString(),
+    );
+  }
+
+  _addInfo(
+    'release',
+    'My user-visible version string is {INFO}.',
+    info.version.release,
+  );
+
+  _addInfo(
+    'sdkInt',
+    'The user-visible SDK version of my framework is {INFO}.',
+    info.version.sdkInt.toString(),
+  );
+
+  _addInfo(
+    'securityPatch',
+    'My user-visible security patch level is {INFO}.',
+    info.version.securityPatch,
+  );
 }
