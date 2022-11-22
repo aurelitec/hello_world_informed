@@ -1,24 +1,30 @@
+// Copyright 2020-2022 TechAurelian. All rights reserved.
+// Use of this source code is governed by an MIT-style license that can be
+// found in the LICENSE file.
+
 import 'package:flutter/material.dart';
 
 import 'common/app_strings.dart' as app_strings;
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const HelloWorldInformedApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+/// The main app widget, which is the root of the app.
+class HelloWorldInformedApp extends StatelessWidget {
+  /// Creates a [HelloWorldInformedApp].
+  const HelloWorldInformedApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: app_strings.appName,
+
+      // A Material Design 3 black and white app theme.
       theme: ThemeData(
         brightness: Brightness.light,
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         colorScheme: const ColorScheme.light(
           primary: Colors.black,
           surface: Colors.black,
@@ -26,6 +32,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
+
+      // The home screen of the app.
       home: const HomeScreen(),
     );
   }

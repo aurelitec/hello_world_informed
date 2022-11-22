@@ -11,7 +11,7 @@ const String appName = 'Hello World Informed';
 // -----------------------------------------------------------------------------------------------
 
 const String homeScreenTitle = 'Hello, World!';
-const String homeFabTooltip = 'Next random info bit';
+const String homeFabTooltip = 'Tap the button to get a random info bit';
 const String homeListTooltip = 'View all info bits';
 const String shareAction = 'Share...';
 const String rateAction = 'Rate app';

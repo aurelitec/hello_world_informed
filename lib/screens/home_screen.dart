@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+
 import 'package:share_plus/share_plus.dart';
 
 import '../common/app_const.dart' as app_const;
@@ -13,6 +14,11 @@ import '../utils/utils.dart' as utils;
 import '../widgets/info_bit_view.dart';
 import 'info_bit_list_screen.dart';
 
+/// The home screen of the app.
+///
+/// Displays a random [InfoBit] and a button to shuffle the displayed info bit. The app bar has
+/// actions to navigate to the [InfoBitListScreen], share the displayed info bit, and other
+/// app-related actions.
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -21,6 +27,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  /// The current info bit to display.
   InfoBit? _infoBit;
 
   @override
@@ -29,21 +36,25 @@ class _HomeScreenState extends State<HomeScreen> {
     _initInfoBits();
   }
 
+  /// Initializes the info bits with information from the device, and updates the current info bit
+  /// with a random one.
   Future<void> _initInfoBits() async {
     await buildInfoBits();
     _shuffleInfoBit();
   }
 
+  /// Updates the current info bit with a random one.
   void _shuffleInfoBit() {
     setState(() {
       _infoBit = getRandomInfoBit();
     });
   }
 
-  /// Perform the actions of the app bar.
+  /// Performs the actions of the app bar.
   Future<void> _onAppBarAction(_AppBarActions action) async {
     switch (action) {
-      // Navigate to the Info Bit List screen.
+      // Navigate to the Info Bit List screen, and update the current info bit if the user selects
+      // one from the list.
       case _AppBarActions.list:
         final InfoBit? infoBit = await Navigator.push(
           context,
@@ -55,14 +66,17 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         }
         break;
-      // Share the infoBit.
+
+      // Share the info bit.
       case _AppBarActions.share:
         Share.share(_infoBit.toString(), subject: app_strings.appName);
         break;
+
       // Open the Google Play app page to allow the user to rate the app.
       case _AppBarActions.rate:
         utils.launchUrlExternal(context, app_const.rateAppUrl);
         break;
+
       // Open the app home page in the default browser.
       case _AppBarActions.what:
         utils.launchUrlExternal(context, app_const.appHomeUrl);
@@ -76,8 +90,16 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: _AppBar(
         onAction: _onAppBarAction,
       ),
-      body: _infoBit != null ? InfoBitView(infoBit: _infoBit!) : Container(),
+
+      // The body of the screen displays the current info bit if it is not null (i.e. if the info bits have been
+      // initialized).
+      body: _infoBit != null
+          ? InfoBitView(infoBit: _infoBit!)
+          : const Center(child: CircularProgressIndicator()),
+
+      // The floating action button shuffles the info bit.
       floatingActionButton: FloatingActionButton.large(
+        tooltip: app_strings.homeFabTooltip,
         onPressed: _shuffleInfoBit,
         child: const Icon(Icons.refresh),
       ),
@@ -88,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
 /// The actions available in the app bar.
 enum _AppBarActions { list, share, rate, what }
 
+/// The app bar of the home screen.
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   const _AppBar({
     // ignore: unused_element
