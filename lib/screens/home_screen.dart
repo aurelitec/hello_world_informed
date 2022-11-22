@@ -33,13 +33,16 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  void _gotoList() {
-    Navigator.push(
+  Future<void> _gotoList() async {
+    final InfoBit? infoBit = await Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => const InfoBitListScreen(),
-      ),
+      MaterialPageRoute(builder: (context) => const InfoBitListScreen()),
     );
+    if (infoBit != null) {
+      setState(() {
+        _infoBit = infoBit;
+      });
+    }
   }
 
   @override

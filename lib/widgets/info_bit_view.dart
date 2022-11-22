@@ -33,24 +33,12 @@ class InfoBitView extends StatelessWidget {
             textAlign: textAlign,
             text: TextSpan(
               children: _parseInfoBit(),
-              style: Theme.of(context).textTheme.headline5,
+              style: isListView
+                  ? Theme.of(context).textTheme.headline6
+                  : Theme.of(context).textTheme.headline5,
             ),
           ),
         ],
-      ),
-    );
-
-    return Container(
-      padding: const EdgeInsets.all(32),
-      alignment: Alignment.center,
-      width: double.infinity,
-      height: double.infinity,
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          children: _parseInfoBit(),
-          style: Theme.of(context).textTheme.headline5,
-        ),
       ),
     );
   }
