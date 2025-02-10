@@ -1,4 +1,4 @@
-# hello_world_informed
+# Hello World Informed
 
 A new Flutter project.
 
