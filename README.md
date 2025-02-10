@@ -33,3 +33,18 @@ Once you have Flutter installed, follow these steps:
     ```
 
 This command will build the app and install it on your connected device or emulator.
+
+## Contributing
+
+Even Hello World apps can benefit from code improvements. If you're a Flutter developer, or just learning Flutter, feel free to explore the code, suggest improvements, or even add new info bits!
+
+To get started:
+
+1. Fork the repository.
+2. Create a new branch for your contribution.
+3. Make your changes.
+4. Submit a pull request.
+
+## License
+
+Hello World Informed is licensed under the [MIT license](LICENSE).
