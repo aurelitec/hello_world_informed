@@ -6,13 +6,30 @@ Hello World Informed is yet another take on the classic "Hello, World!" program,
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run this project locally, you will need the Flutter SDK installed on your machine.  If you don't have it already, follow the instructions on the [official Flutter website](https://docs.flutter.dev/get-started/install).
 
-A few resources to get you started if this is your first Flutter project:
+Once you have Flutter installed, follow these steps:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Clone the repository:**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   ```bash
+   git clone https://github.com/aurelitec/hello_world_informed.git
+   cd hello_world_informed
+   ```
+2. **Install dependencies:**
+
+    ```bash
+    flutter pub get
+    ```
+
+3. **Connect a device (or use an emulator):**
+
+    Make sure you have a physical Android device connected to your computer in developer mode, or have an Android emulator running.
+
+4. **Run the app:**
+
+    ```bash
+    flutter run
+    ```
+
+This command will build the app and install it on your connected device or emulator.
