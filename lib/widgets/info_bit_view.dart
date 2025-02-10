@@ -1,6 +1,8 @@
-// Copyright 2020-2022 TechAurelian. All rights reserved.
-// Use of this source code is governed by an MIT-style license that can be
-// found in the LICENSE file.
+// This file is part of Hello World Informed
+// https://www.aurelitec.com/helloworldinformed/
+//
+// Copyright 2020-2025 Aurelitec. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for details.
 
 import 'package:flutter/material.dart';
 
@@ -12,10 +14,10 @@ import '../data/info_bit.dart';
 class InfoBitView extends StatelessWidget {
   /// Creates a widget that displays an [InfoBit].
   const InfoBitView({
-    Key? key,
+    super.key,
     required this.infoBit,
     this.isListView = false,
-  }) : super(key: key);
+  });
 
   /// The info bit to display.
   final InfoBit infoBit;
@@ -36,7 +38,7 @@ class InfoBitView extends StatelessWidget {
           // Display the info bit's title.
           Text(
             infoBit.title,
-            style: Theme.of(context).textTheme.caption,
+            style: Theme.of(context).textTheme.bodySmall,
             textAlign: textAlign,
           ),
           const SizedBox(height: 4.0),
@@ -47,8 +49,8 @@ class InfoBitView extends StatelessWidget {
             text: TextSpan(
               children: _getInfoBitRichText(),
               style: isListView
-                  ? Theme.of(context).textTheme.headline6
-                  : Theme.of(context).textTheme.headline5,
+                  ? Theme.of(context).textTheme.titleLarge
+                  : Theme.of(context).textTheme.headlineSmall,
             ),
           ),
         ],

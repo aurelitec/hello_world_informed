@@ -1,6 +1,8 @@
-// Copyright 2020-2022 TechAurelian. All rights reserved.
-// Use of this source code is governed by an MIT-style license that can be
-// found in the LICENSE file.
+// This file is part of Hello World Informed
+// https://www.aurelitec.com/helloworldinformed/
+//
+// Copyright 2020-2025 Aurelitec. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for details.
 
 import 'package:flutter/material.dart';
 

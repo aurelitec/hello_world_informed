@@ -1,8 +1,8 @@
-// Copyright 2020-2022 TechAurelian. All rights reserved.
-// Use of this source code is governed by an MIT-style license that can be
-// found in the LICENSE file.
-
-// cspell:ignore bootloader, changelist
+// This file is part of Hello World Informed
+// https://www.aurelitec.com/helloworldinformed/
+//
+// Copyright 2020-2025 Aurelitec. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for details.
 
 import 'dart:math';
 
@@ -61,50 +61,6 @@ Future<void> buildInfoBits() async {
     'display',
     '${InfoBit.infoPlaceholder} is a build ID meant to be displayed to you.',
     info.display,
-  );
-
-  // Information about the current android display.
-
-  _addInfo(
-    'displayMetrics.heightInches',
-    'My exact physical display height is ${InfoBit.infoPlaceholder} inches.',
-    info.displayMetrics.heightInches.toString(),
-  );
-
-  _addInfo(
-    'displayMetrics.widthInches',
-    'My exact physical display width is ${InfoBit.infoPlaceholder} inches.',
-    info.displayMetrics.widthInches.toString(),
-  );
-
-  _addInfo(
-    'displayMetrics.heightPx',
-    'My absolute height in pixels is ${InfoBit.infoPlaceholder} pixels.',
-    info.displayMetrics.heightPx.toString(),
-  );
-
-  _addInfo(
-    'displayMetrics.widthPx',
-    'My absolute width in pixels is ${InfoBit.infoPlaceholder} pixels.',
-    info.displayMetrics.widthPx.toString(),
-  );
-
-  _addInfo(
-    'displayMetrics.xDpi',
-    'I have exactly ${InfoBit.infoPlaceholder} physical pixels per inch in the X dimension.',
-    info.displayMetrics.xDpi.toString(),
-  );
-
-  _addInfo(
-    'displayMetrics.yDpi',
-    'I have exactly ${InfoBit.infoPlaceholder} physical pixels per inch in the Y dimension.',
-    info.displayMetrics.yDpi.toString(),
-  );
-
-  _addInfo(
-    'displayMetrics.sizeInches',
-    'My exact physical size measured diagonally across the display is ${InfoBit.infoPlaceholder} inches.',
-    info.displayMetrics.sizeInches.toString(),
   );
 
   // Back to Android device info.
