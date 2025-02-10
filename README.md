@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green)](https://github.com/aurelitec/hello_world_informed/pulls)
 
-📱 "I'm a physical device!" Hello World Informed is a simple Hello World Flutter app that displays "info bits" – short pieces of device data – in a first-person style. These info bits can be viewed randomly on the home screen, refreshed with a shuffle button, or browsed in a scrollable list. The app uses a clean and simple black and white theme.
+📱 "I'm a physical device!" Hello World Informed is a simple Hello World Flutter app that runs on Android and displays "info bits" – short pieces of device data – in a first-person style. These info bits can be viewed randomly on the home screen, refreshed with a shuffle button, or browsed in a scrollable list. The app uses a clean and simple black and white theme.
 
 Hello World Informed is yet another take on the classic "Hello, World!" program, a traditional first step in learning a new programming language or framework. While typical "Hello, World!" programs simply display text, this app expands on that concept by showing (some) device information in a more dynamic and interactive way. Being open-source, with well-commented code and examples of common mobile UI elements (AppBar, FAB, list views, navigation between two screens, etc.), it offers potential educational value for those learning Flutter development.
 
