@@ -6,7 +6,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'common/app_strings.dart' as app_strings;
+import 'common/strings.dart' as strings;
 import 'screens/home_screen.dart';
 
 void main() {
@@ -22,7 +22,7 @@ class HelloWorldInformedApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: app_strings.appName,
+      title: strings.appName,
 
       // A Material Design 3 black and white app theme.
       theme: ThemeData(

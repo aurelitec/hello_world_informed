@@ -6,7 +6,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../common/app_strings.dart' as app_strings;
+import '../common/strings.dart' as strings;
 import '../data/info_bit.dart';
 import '../data/info_bits.dart';
 import '../widgets/info_bit_view.dart';
@@ -30,7 +30,7 @@ class InfoBitListScreen extends StatelessWidget {
       child: Scaffold(
         // A simple app bar with just the screen title.
         appBar: AppBar(
-          title: const Text(app_strings.infoBitListScreenTitle),
+          title: const Text(strings.infoBitListScreenTitle),
         ),
 
         // The body of the screen is a list view of the info bits.

@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 
 import 'package:share_plus/share_plus.dart';
 
-import '../common/app_const.dart' as app_const;
-import '../common/app_strings.dart' as app_strings;
+import '../common/consts.dart' as consts;
+import '../common/strings.dart' as strings;
 import '../data/info_bit.dart';
 import '../data/info_bits.dart';
 import '../utils/utils.dart' as utils;
@@ -71,22 +71,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // Share the info bit.
       case _AppBarActions.share:
-        Share.share(_infoBit.toString(), subject: app_strings.appName);
+        Share.share(_infoBit.toString(), subject: strings.appName);
         break;
 
       // Open the app home page in the default browser.
       case _AppBarActions.about:
-        utils.launchUrlExternal(context, app_const.appHomeUrl);
+        utils.launchUrlExternal(context, consts.appHomeUrl);
         break;
 
       // Open the app feedback page in the default browser.
       case _AppBarActions.feedback:
-        utils.launchUrlExternal(context, app_const.feedbackUrl);
+        utils.launchUrlExternal(context, consts.feedbackUrl);
         break;
 
       // Open the app GitHub page in the default browser.
       case _AppBarActions.github:
-        utils.launchUrlExternal(context, app_const.githubUrl);
+        utils.launchUrlExternal(context, consts.githubUrl);
         break;
     }
   }
@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // The floating action button shuffles the info bit.
       floatingActionButton: FloatingActionButton.large(
-        tooltip: app_strings.homeFabTooltip,
+        tooltip: strings.homeFabTooltip,
         onPressed: _shuffleInfoBit,
         child: const Icon(Icons.refresh),
       ),
@@ -131,11 +131,11 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text(app_strings.homeScreenTitle),
+      title: const Text(strings.homeScreenTitle),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.view_list),
-          tooltip: app_strings.homeListTooltip,
+          tooltip: strings.homeListTooltip,
           onPressed: () => onAction(_AppBarActions.list),
         ),
         PopupMenuButton<_AppBarActions>(
@@ -143,25 +143,25 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
           itemBuilder: (BuildContext context) => <PopupMenuEntry<_AppBarActions>>[
             const PopupMenuItem<_AppBarActions>(
               value: _AppBarActions.share,
-              child: Text(app_strings.shareAction),
+              child: Text(strings.shareAction),
             ),
             const PopupMenuDivider(),
             const PopupMenuItem<_AppBarActions>(
               value: _AppBarActions.about,
-              child: Text(app_strings.aboutAppAction),
+              child: Text(strings.aboutAppAction),
             ),
             // TODO: re-add the rate action when the app is published on an app store.
             // const PopupMenuItem<_AppBarActions>(
             //   value: _AppBarActions.rate,
-            //   child: Text(app_strings.rateAction),
+            //   child: Text(strings.rateAction),
             // ),
             const PopupMenuItem<_AppBarActions>(
               value: _AppBarActions.feedback,
-              child: Text(app_strings.feedbackAction),
+              child: Text(strings.feedbackAction),
             ),
             const PopupMenuItem<_AppBarActions>(
               value: _AppBarActions.github,
-              child: Text(app_strings.starOnGitHubAction),
+              child: Text(strings.starOnGitHubAction),
             ),
           ],
         ),
