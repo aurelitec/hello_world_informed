@@ -10,6 +10,11 @@
 
 Hello World Informed is yet another take on the classic "Hello, World!" program, a traditional first step in learning a new programming language or framework. While typical "Hello, World!" programs simply display text, this app expands on that concept by showing (some) device information in a more dynamic and interactive way. Being open-source, with well-commented code and examples of common mobile UI elements (AppBar, FAB, list views, navigation between two screens, etc.), it offers potential educational value for those learning Flutter development.
 
+| Random info bit display | Browsing all info bits |
+| ----------- | -------------------- | 
+| ![Hello World Informed home screen](repo-assets/hello-world-informed-home-screenshot.png) | ![Hello World Informed info bit list screen](repo-assets/hello-world-informed-info-bit-list-screenshot.png) |
+
+
 ## Getting Started
 
 To run this project locally, you will need the Flutter SDK installed on your machine.  If you don't have it already, follow the instructions on the [official Flutter website](https://docs.flutter.dev/get-started/install).
