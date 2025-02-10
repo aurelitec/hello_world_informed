@@ -33,6 +33,13 @@ class HelloWorldInformedApp extends StatelessWidget {
           onSurface: Colors.white,
         ),
         useMaterial3: true,
+        dividerTheme: DividerThemeData(
+          color: Colors.white.withValues(alpha: 0.25),
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+        ),
       ),
 
       // The home screen of the app.

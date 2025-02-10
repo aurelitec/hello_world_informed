@@ -74,14 +74,19 @@ class _HomeScreenState extends State<HomeScreen> {
         Share.share(_infoBit.toString(), subject: app_strings.appName);
         break;
 
-      // Open the Google Play app page to allow the user to rate the app.
-      case _AppBarActions.rate:
-        utils.launchUrlExternal(context, app_const.rateAppUrl);
+      // Open the app home page in the default browser.
+      case _AppBarActions.about:
+        utils.launchUrlExternal(context, app_const.appHomeUrl);
         break;
 
-      // Open the app home page in the default browser.
-      case _AppBarActions.what:
-        utils.launchUrlExternal(context, app_const.appHomeUrl);
+      // Open the app feedback page in the default browser.
+      case _AppBarActions.feedback:
+        utils.launchUrlExternal(context, app_const.feedbackUrl);
+        break;
+
+      // Open the app GitHub page in the default browser.
+      case _AppBarActions.github:
+        utils.launchUrlExternal(context, app_const.githubUrl);
         break;
     }
   }
@@ -110,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 /// The actions available in the app bar.
-enum _AppBarActions { list, share, rate, what }
+enum _AppBarActions { list, share, feedback, github, about }
 
 /// The app bar of the home screen.
 class _AppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -140,13 +145,23 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
               value: _AppBarActions.share,
               child: Text(app_strings.shareAction),
             ),
+            const PopupMenuDivider(),
             const PopupMenuItem<_AppBarActions>(
-              value: _AppBarActions.rate,
-              child: Text(app_strings.rateAction),
+              value: _AppBarActions.about,
+              child: Text(app_strings.aboutAppAction),
+            ),
+            // TODO: re-add the rate action when the app is published on an app store.
+            // const PopupMenuItem<_AppBarActions>(
+            //   value: _AppBarActions.rate,
+            //   child: Text(app_strings.rateAction),
+            // ),
+            const PopupMenuItem<_AppBarActions>(
+              value: _AppBarActions.feedback,
+              child: Text(app_strings.feedbackAction),
             ),
             const PopupMenuItem<_AppBarActions>(
-              value: _AppBarActions.what,
-              child: Text(app_strings.appHomeAction),
+              value: _AppBarActions.github,
+              child: Text(app_strings.starOnGitHubAction),
             ),
           ],
         ),

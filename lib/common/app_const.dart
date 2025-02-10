@@ -11,7 +11,8 @@ library;
 // Urls
 // -----------------------------------------------------------------------------------------------
 
-const String rateAppUrl =
-    'https://play.google.com/store/apps/details?id=com.appliberated.helloworldselfaware';
+const String feedbackUrl = 'https://www.aurelitec.com/helloworldinformed/feedback/';
+
+const String githubUrl = 'https://github.com/aurelitec/hello_world_informed';
 
 const String appHomeUrl = 'https://www.aurelitec.com/helloworldinformed/';

@@ -17,8 +17,9 @@ const String homeScreenTitle = 'Hello, World!';
 const String homeFabTooltip = 'Tap the button to get a random info bit';
 const String homeListTooltip = 'View all info bits';
 const String shareAction = 'Share...';
-const String rateAction = 'Rate app';
-const String appHomeAction = 'App homepage';
+const String aboutAppAction = 'About this "app"';
+const String feedbackAction = 'Send feedback';
+const String starOnGitHubAction = 'Star on GitHub';
 
 // -----------------------------------------------------------------------------------------------
 // Info Bit List Screen
